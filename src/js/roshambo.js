@@ -3,7 +3,10 @@ module.exports = Roshambo;
 Roshambo.prototype = {
 	players: 2,
 	shoot: function(p1, p2) {
-		if (typeof this.winnersTable[p1] === 'undefined' 
+		if (typeof p2 === 'undefined')
+			p2 = plays.rock;
+
+		if (typeof this.winnersTable[p1] === 'undefined'
 			|| typeof this.winnersTable[p1][p2] === 'undefined')
 			throw 'Must provide valid input!';
 

@@ -41,4 +41,15 @@ describe('core functionality', function(){
 		}).toThrow();
 	});
 
+	it('fails when given 4', function() {
+		var game = this.game;
+		expect(function() {
+			game.shoot(plays.rock, 4);
+		}).toThrow();
+	});
+
+	it('allows playing against the computer', function(){
+		expect(this.game.shoot(plays.rock)).toBeDefined();
+	});
+
 });
